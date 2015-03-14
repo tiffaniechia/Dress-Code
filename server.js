@@ -1,4 +1,5 @@
-var express = require('express');
+var express = require('express'),
+    mongoose = require('mongoose');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -8,6 +9,13 @@ app.engine('html', require('ejs').renderFile);
 app.set('views', __dirname + '/server/views');
 app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public'));
+
+mongoose.connect('mongodb://localhost/dresscodefordeloitte');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Database connection error...'));
+db.once('open', function callback() {
+    console.log('Dress Code For Deloitte Database Opened');
+});
 
 app.get('/partials/:partialsPath', function (req, res) {
     res.render('partials/' + req.params.partialsPath);
