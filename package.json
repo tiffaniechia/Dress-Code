@@ -1,0 +1,14 @@
+{
+  "name": "DressCodeForDeloitte",
+  "version": "0.0.0",
+  "description": "Apparel Ecommerce Site For Deloitte",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Tiffanie Chia",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.2"
+  }
+}
