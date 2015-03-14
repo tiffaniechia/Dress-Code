@@ -4,7 +4,11 @@
   "description": "Apparel Ecommerce Site For Deloitte",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "echo \"Error: No test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.1.x"
   },
   "author": "Tiffanie Chia",
   "license": "ISC",
