@@ -17,12 +17,21 @@ db.once('open', function callback() {
     console.log('Dress Code For Deloitte Database Opened');
 });
 
+var messageSchema = mongoose.Schema({message: String});
+var Message = mongoose.model('Message', messageSchema);
+var mongoMessage;
+Message.findOne().exec(function(err, messageDoc){
+    mongoMessage = messageDoc.message;
+});
+
 app.get('/partials/:partialsPath', function (req, res) {
     res.render('partials/' + req.params.partialsPath);
 });
 
 app.get('*', function (req, res) {
-    res.render('index');
+    res.render('index', {
+        mongoMessage : mongoMessage
+    });
 });
 
 var port = 8080;
