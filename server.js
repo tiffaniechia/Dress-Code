@@ -1,5 +1,6 @@
 var express = require('express'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    chalk = require('chalk');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -14,7 +15,7 @@ mongoose.connect('mongodb://localhost/dresscodefordeloitte');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Database connection error...'));
 db.once('open', function callback() {
-    console.log('Dress Code For Deloitte Database Opened');
+    console.log(chalk.green('Dress Code For Deloitte Database Opened'));
 });
 
 var messageSchema = mongoose.Schema({message: String});
@@ -36,4 +37,4 @@ app.get('*', function (req, res) {
 
 var port = 8080;
 app.listen(port);
-console.log('Listening on port ' + port + '...');
+console.log(chalk.green('Listening on port ' + port ));
