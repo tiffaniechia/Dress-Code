@@ -8,6 +8,3 @@ angular.module('app').config(function($routeProvider){
         })
 });
 
-angular.module('app').controller('MainCtrl',function($scope){
-
-});
