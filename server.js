@@ -12,7 +12,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var config = setEnvConfigs[env];
 
 setExpressViews(app, config);
-setMongooseConnection(config);
+setMongooseConnection(config, env);
 setRoutes(app);
 
 app.listen(config.port);
