@@ -11,9 +11,17 @@ app.set('views', __dirname + '/server/views');
 app.set('view engine', 'html');
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://localhost/dresscodefordeloitte');
+if(env === 'development') {
+    mongoose.connect('mongodb://localhost/dresscodefordeloitte');
+} else {
+    mongoose.connect('mongodb://adminUser:admincat@ds031271.mongolab.com:31271/dresscodefordeloitte');
+}
+
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'Database connection error...'));
+db.on('error', function(err){
+    console.error(chalk.red('MongoDB connection error: '+ err));
+    process.exit(-1);
+});
 db.once('open', function callback() {
     console.log(chalk.green('Dress Code For Deloitte Database Opened'));
 });
