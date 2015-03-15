@@ -2,17 +2,18 @@ var express = require('express');
 var mongoose = require('mongoose');
 var chalk = require('chalk');
 
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var setEnvConfigs = require('./server/config/config');
+var setExpressViews = require('./server/config/express');
+var setMongooseConnection = require('./server/config/mongoose');
+var setRoutes = require('./server/config/routes');
 
 var app = express();
+var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var config = setEnvConfigs[env];
 
-var config = require('./server/config/config')[env];
-
-require('./server/config/express')(app, config);
-
-require('./server/config/mongoose')(config);
-
-require('./server/config/routes')(app);
+setExpressViews(app, config);
+setMongooseConnection(config);
+setRoutes(app);
 
 app.listen(config.port);
 console.log(chalk.green('Listening on port ' + config.port));

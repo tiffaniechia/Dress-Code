@@ -1,7 +1,7 @@
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/../../');
 
-module.exports = {
+var setEnvConfigs = {
     development: {
         db: 'mongodb://localhost/dresscodefordeloitte',
         rootPath: rootPath,
@@ -14,3 +14,5 @@ module.exports = {
         port: process.env.PORT || 8080
     }
 };
+
+module.exports = setEnvConfigs;

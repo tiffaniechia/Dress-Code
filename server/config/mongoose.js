@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var chalk = require('chalk');
 
-module.exports = function (config) {
+var setMongooseConnection = function (config) {
     mongoose.connect(config.db);
     var db = mongoose.connection;
     db.on('error', function (err) {
@@ -11,4 +11,7 @@ module.exports = function (config) {
     db.once('open', function callback() {
         console.log(chalk.green('Dress Code For Deloitte Database Opened'));
     });
+
 };
+
+module.exports = setMongooseConnection;

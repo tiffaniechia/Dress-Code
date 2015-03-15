@@ -1,4 +1,4 @@
-module.exports = function (app) {
+var setRoutes= function (app) {
     app.get('/partials/*', function (req, res) {
         res.render('partials/' + req.params[0]);
     });
@@ -7,3 +7,5 @@ module.exports = function (app) {
         res.render('index');
     });
 };
+
+module.exports = setRoutes;
