@@ -1,6 +1,6 @@
 module.exports = function (app) {
-    app.get('/partials/:partialsPath', function (req, res) {
-        res.render('partials/' + req.params.partialsPath);
+    app.get('/partials/*', function (req, res) {
+        res.render('partials/' + req.params[0]);
     });
 
     app.get('*', function (req, res) {
