@@ -1,4 +1,4 @@
-module.exports = function (app){
+module.exports = function (app) {
     app.get('/partials/:partialsPath', function (req, res) {
         res.render('partials/' + req.params.partialsPath);
     });

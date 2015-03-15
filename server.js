@@ -15,4 +15,4 @@ require('./server/config/mongoose')(config);
 require('./server/config/routes')(app);
 
 app.listen(config.port);
-console.log(chalk.green('Listening on port ' + config.port ));
+console.log(chalk.green('Listening on port ' + config.port));
