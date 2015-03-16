@@ -41,7 +41,7 @@ describe("ProductService", function () {
 
         mockhttpBackend.whenGET('/api/products').respond(successResponse);
 
-        var result = ProductService.query();
+        var result = ProductService.getProducts();
 
         mockhttpBackend.flush();
 
