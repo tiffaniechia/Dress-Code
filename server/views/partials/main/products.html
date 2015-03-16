@@ -1,0 +1,23 @@
+<div>
+    <ul ng-repeat="productCategory in productCategories">
+        <li>{{ productCategory }}</li>
+    </ul>
+
+    <br/>
+
+    {{cart}}
+
+    <br/>
+
+    <ul ng-repeat="product in products">
+        <li>
+            Product: {{ product.name }}
+            Category: {{ product.category }}
+            Price: {{ product.price }}
+            Quantity: {{ product.quantity }}
+            <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
+            <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
+        </li>
+    </ul>
+
+</div>

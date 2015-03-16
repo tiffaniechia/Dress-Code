@@ -2,24 +2,7 @@
     <h1>Dress Code</h1>
 </div>
 
-<div ng-init="init()" >
-    <ul ng-repeat="productCategory in productCategories">
-        <li>{{ productCategory }}</li>
-    </ul>
-
-    <br/>
-
-    <ul ng-repeat="product in products">
-        <li>
-            Product: {{ product.name }}
-            Category: {{ product.category }}
-            Price: {{ product.price }}
-            Quantity: {{ product.quantity }}
-            <button>Add to cart</button>
-        </li>
-    </ul>
-
-</div>
+<div ng-include="'partials/main/products.html'" ng-controller="ProductCtrl" ng-init="init()"></div>
 
 <div class="footer">
     <p>Tiffanie Chia for Deloitte Digital</p>
