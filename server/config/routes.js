@@ -4,7 +4,7 @@ var Product = mongoose.model('Product');
 
 var setRoutes= function (app) {
 
-    app.get('/api/productsList', function(req, res){
+    app.get('/api/products', function(req, res){
         Product.find({}).exec(function(err, collection){
             res.send(collection);
         });
