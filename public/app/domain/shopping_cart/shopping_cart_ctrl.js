@@ -2,7 +2,6 @@ angular.module('app').controller('ShoppingCartCtrl',['$scope', '$rootScope', fun
 
     $scope.totalPrice = 0;
 
-
     $scope.addItem = function(product){
         $rootScope.cart.push(product);
         product.quantity = product.quantity - 1;

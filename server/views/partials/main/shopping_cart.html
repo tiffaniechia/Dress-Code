@@ -1,7 +1,7 @@
 <div ng-controller="ShoppingCartCtrl">
-    <a ui-sref="main">Back</a>
+
 {{cart}}
-    <div ng-repeat="item in cart">
+    <div ng-repeat="item in cart track by $index" >
         <ul>
             <li>{{item}}</li>
         </ul>
