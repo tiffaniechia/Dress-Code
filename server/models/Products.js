@@ -23,7 +23,8 @@ function createDefaultProducts(env) {
                     name: 'Suede Shoes, Blue',
                     category: 'Women’s Footwear',
                     price: 42.00,
-                    quantity: 4});
+                    quantity: 4
+                });
                 Product.create({
                     name: 'Leather Driver Saddle Loafers, Tan',
                     category: 'Men’s Footwear',
@@ -34,12 +35,14 @@ function createDefaultProducts(env) {
                     name: 'Flip Flops, Red',
                     category: 'Men’s Footwear',
                     price: 19.00,
-                    quantity: 6});
+                    quantity: 6
+                });
                 Product.create({
                     name: 'Flip Flops, Blue',
                     category: 'Men’s Footwear',
                     price: 19.00,
-                    quantity: 0});
+                    quantity: 0
+                });
                 Product.create({
                     name: 'Gold Button Cardigan, Black',
                     category: 'Women’s Casualwear',

@@ -1,4 +1,4 @@
-angular.module('app').controller('MainCtrl', function ($scope) {
+angular.module('app').controller('MainCtrl', ['$scope',function ($scope) {
     $scope.categories = [
         "Women's Footwear",
         "Women's Casual Wear",
@@ -6,4 +6,4 @@ angular.module('app').controller('MainCtrl', function ($scope) {
         "Men's Footwear",
         "Men's Casual Wear",
         "Men's Formal Wear"]
-});
+}]);
