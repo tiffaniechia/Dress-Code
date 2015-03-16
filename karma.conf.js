@@ -9,6 +9,7 @@ module.exports = function(config) {
       'public/vendor/angular/angular.js',
       'public/vendor/angular-resource/angular-resource.js',
       'public/vendor/angular-mocks/angular-mocks.js',
+      'public/vendor/underscore/underscore.js',
       'test/*.js',
       'public/app/**/*.js',
       'test/**/*.test.js'
@@ -34,8 +35,8 @@ module.exports = function(config) {
 
     browsers: ['PhantomJS'],
 
-    singleRun: false
+    singleRun: false,
 
-    //plugins: ['karma-phantomjs-launcher','karma-jasmine','karma-chai-plugins']
+    plugins: ['karma-phantomjs-launcher','karma-jasmine','karma-chai-plugins']
   });
 };

@@ -7,4 +7,5 @@ angular.module('app').factory('ProductService', ['$resource', function ($resourc
     return {
         getProducts: getProducts
     }
+
 }]);
