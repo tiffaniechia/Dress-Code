@@ -1,0 +1,13 @@
+<div ng-controller="ShoppingCartCtrl">
+    <a ui-sref="main">Back</a>
+{{cart}}
+    <div ng-repeat="item in cart">
+        <ul>
+            <li>{{item}}</li>
+        </ul>
+    </div>
+
+    <br/>
+   {{totalPrice}}
+
+</div>

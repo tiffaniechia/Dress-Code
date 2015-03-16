@@ -1,22 +1,11 @@
 angular.module('app').controller('ProductCtrl', ['$scope', 'ProductService', '$rootScope', function ($scope, ProductService, $rootScope) {
 
-    $scope.products = [];
-    $scope.productCategories = [];
-
     $scope.init = function () {
+
+        $scope.products = [];
+        $scope.productCategories = [];
+
         getProductInformation();
-    };
-
-    $scope.addItem = function(product){
-        $rootScope.cart.push(product);
-        product.quantity = product.quantity - 1;
-    };
-
-    $scope.isInCart = function(product){
-        return $rootScope.cart.indexOf(product) > -1;
-    };
-
-    $scope.removeItem = function(product){
 
     };
 
@@ -30,6 +19,6 @@ angular.module('app').controller('ProductCtrl', ['$scope', 'ProductService', '$r
                 return result;
             }, []);
         });
-    }
 
+    };
 }]);

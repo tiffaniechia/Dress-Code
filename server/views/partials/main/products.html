@@ -5,18 +5,17 @@
 
     <br/>
 
-    {{cart}}
-
-    <br/>
-
     <ul ng-repeat="product in products">
         <li>
             Product: {{ product.name }}
             Category: {{ product.category }}
             Price: {{ product.price }}
             Quantity: {{ product.quantity }}
-            <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
-            <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
+
+            <div ng-controller="ShoppingCartCtrl">
+                <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
+                <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
+            </div>
         </li>
     </ul>
 
