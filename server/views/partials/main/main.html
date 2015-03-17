@@ -1,8 +1,7 @@
 <div class="header">
-    <h1>Dress Code</h1>
+    <h1>DRESSCODE.</h1>
+    <button class="pageButton" ng-click="switchPage()">Go to {{page}} </button>
 </div>
-
-<button ng-click="switchPage()">go to {{page}} </button>
 
 <div ng-hide="page=='shopping cart'">
     <div ng-include="'partials/main/shopping_cart.html'" ng-controller="ShoppingCartCtrl"></div>
@@ -11,9 +10,4 @@
 
 <div ng-hide="page=='products'">
     <div ng-include="'partials/main/products.html'" ng-controller="ProductCtrl" ng-init="init()"></div>
-</div>
-
-
-<div class="footer">
-    <p>Tiffanie Chia for Deloitte Digital</p>
 </div>

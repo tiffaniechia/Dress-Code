@@ -1,22 +1,19 @@
 <div>
-    <ul ng-repeat="productCategory in productCategories">
-        <li>{{ productCategory }}</li>
-    </ul>
+    <div class="itemsBlock">
+        <div class="item" ng-repeat="product in products">
+            <div class="itemTitle">{{ product.name }}</div>
 
-    <br/>
+            <div class="itemPrice">{{ product.price |currency:"USD$"}}</div>
+            <div class="itemDetails">
+                <div>{{ product.category }}</div>
+                <div>Quantity: {{ product.quantity }}</div>
+            </div>
 
-    <ul ng-repeat="product in products">
-        <li>
-            Product: {{ product.name }}
-            Category: {{ product.category }}
-            Price: £{{ product.price }}
-            Quantity: {{ product.quantity }}
-
-            <div ng-controller="ShoppingCartCtrl">
+            <div class="itemButtons"ng-controller="ShoppingCartCtrl">
                 <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
                 <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
             </div>
-        </li>
-    </ul>
+        </div>
+    </div>
 
 </div>
