@@ -17,6 +17,4 @@ angular.module('app').controller('ShoppingCartCtrl',['$scope', '$rootScope', fun
         $rootScope.$broadcast('cart-modified');
     };
 
-
-
 }]);

@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var chalk = require('chalk');
 
 var productModel = require('../models/Products');
+var voucherModel = require('../models/Vouchers');
 
 var setMongooseConnection = function (config, env) {
     mongoose.connect(config.db);
@@ -15,6 +16,7 @@ var setMongooseConnection = function (config, env) {
     });
 
     productModel.createDefaultProducts(env);
+    voucherModel.createDefaultProducts(env);
 };
 
 module.exports = setMongooseConnection;
