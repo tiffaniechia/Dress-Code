@@ -10,7 +10,6 @@ var productSchema = mongoose.Schema({
 var Product = mongoose.model('Product', productSchema);
 
 function createDefaultProducts(env) {
-    if (env == 'development') {
         Product.find({}).exec(function (err, collection) {
             if (collection.length === 0) {
                 Product.create({
@@ -93,7 +92,6 @@ function createDefaultProducts(env) {
                 });
             }
         })
-    }
 }
 
 exports.createDefaultProducts = createDefaultProducts;

@@ -10,7 +10,6 @@ var voucherSchema = mongoose.Schema({
 var Voucher = mongoose.model('Voucher', voucherSchema);
 
 function createDefaultProducts(env) {
-    if (env == 'development') {
         Voucher.find({}).exec(function (err, collection) {
             if (collection.length === 0) {
                 Voucher.create({
@@ -33,7 +32,6 @@ function createDefaultProducts(env) {
                 });
             }
         })
-    }
 }
 
 exports.createDefaultProducts = createDefaultProducts;
