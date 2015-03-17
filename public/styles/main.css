@@ -79,3 +79,37 @@ button{
     margin-right: -1em;
     font-size: 1.2em;
 }
+
+.cart {
+    border: 0.4em solid black;
+    border-radius: 0.4em;
+    margin: 2em;
+    color:white;
+    background: black;
+}
+
+.cartHeader{
+    height:2.3em;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding:1em;
+}
+
+.cartFooter {
+    height:2em;
+    padding:1em;
+    font-weight: lighter;
+    background: black
+}
+
+.cartItem {
+    background: #292b2e;
+    color: white;
+    padding:1em;
+    height:2.3em;
+}
+
+.cartItemButton {
+    float:right;
+}

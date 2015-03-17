@@ -1,16 +1,16 @@
 <div ng-controller="ShoppingCartCtrl">
-
-    <div ng-repeat="item in cart track by $index" >
-        <ul>
-            <li>
-               Product in Cart: {{item.name}}, £{{ item.price}}
-                <button ng-click="removeItem(item) && updatePrice()">Remove item</button>
-            </li>
-        </ul>
+    <div class="cart">
+        <div class="cartHeader">SHOPPING CART</div>
+        <div ng-repeat="item in cart track by $index">
+            <div class="cartItem">
+                Product in Cart: {{item.name}}, {{ item.price |currency:"GBP£"}}
+                <button class="cartItemButton" ng-click="removeItem(item) && updatePrice()">Remove item</button>
+            </div>
+        </div>
+        <div class="cartFooter"> Total Price: {{totalPrice |currency:"GBP£"}}</div>
     </div>
 
-    <br/>
 
-    <p ng-controller="PriceCalculatorCtrl">Total Price: {{totalPrice}}</p>
+    <div ng-include="'partials/main/vouchers.html'" ng-controller="VouchersCtrl" ng-init="init()"></div>
 
 </div>
