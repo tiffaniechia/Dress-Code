@@ -1,4 +1,5 @@
 angular.module('app').factory('Product',[function(){
+
     function Product(id, name, category, price, quantity){
         this.id = id;
         this.name = name;
@@ -8,4 +9,5 @@ angular.module('app').factory('Product',[function(){
     }
 
     return Product;
+
 }]);

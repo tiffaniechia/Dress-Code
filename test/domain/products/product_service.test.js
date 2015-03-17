@@ -1,17 +1,16 @@
-describe("ProductService", function () {
-    var ProductService, mockhttpBackend;
+describe("ProductsService", function () {
+    var ProductsService, mockhttpBackend;
 
     beforeEach(function () {
         module('app');
 
-        inject(function (_$httpBackend_, _ProductService_) {
-            ProductService = _ProductService_;
+        inject(function (_$httpBackend_, _ProductsService_) {
+            ProductsService = _ProductsService_;
             mockhttpBackend = _$httpBackend_;
         });
     });
 
     it("Should get product list from the database", function () {
-
         var successResponse = [
             {
                 "_id": "5505c18dd93a34f85cd34776",
@@ -40,12 +39,9 @@ describe("ProductService", function () {
         ];
 
         mockhttpBackend.whenGET('/api/products').respond(successResponse);
-
-        var result = ProductService.getProducts();
-
+        var result = ProductsService.getProducts();
         mockhttpBackend.flush();
 
         expect(JSON.stringify(result)).toEqual(JSON.stringify(successResponse));
-
     });
 });

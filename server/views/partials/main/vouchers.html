@@ -1,15 +1,23 @@
 <div class="vouchers">
     <div>
         <p class="vouchersMessage" ng-if="eligibleVouchers.length > 0">
-            Look! Lucky you, you're eligible for discounts! Check the boxes to apply them!
+            Look! Lucky you, you're eligible for discounts!
         </p>
     </div>
-
-    <div class="voucherList"ng-repeat="voucher in eligibleVouchers">
+    <div class="voucherList" ng-repeat="voucher in eligibleVouchers">
         <div class="voucherItem">
-             <input type="checkbox" ng-click="updateWD(voucher)"> Voucher: {{voucher.description}}
+            Voucher: {{voucher.description}}
+            <div class="voucherNotification" ng-if="isVoucherApplied(voucher)">VOUCHER APPLIED!</div>
+            <button class="voucherItemButton" ng-if="!isVoucherApplied(voucher)" ng-click="applyVoucher(voucher)">Apply
+                Voucher
+            </button>
+
         </div>
     </div>
-    {{vouchersChosen}}
-    {{priceWithDiscount}}
+    <div>
+        <p class="vouchersTotal">
+            New total price When you apply your discounts: {{newPrice |currency:"GBP£"}}
+        </p>
+    </div>
 </div>
+

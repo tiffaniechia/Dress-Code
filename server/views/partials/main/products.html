@@ -8,12 +8,10 @@
                 <div>{{ product.category }}</div>
                 <div>Quantity: {{ product.quantity }}</div>
             </div>
-
-            <div class="itemButtons"ng-controller="ShoppingCartCtrl">
+            <div class="itemButtons" ng-controller="ShoppingCartCtrl">
                 <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
                 <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
             </div>
         </div>
     </div>
-
 </div>

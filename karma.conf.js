@@ -1,42 +1,40 @@
-module.exports = function(config) {
-  config.set({
+module.exports = function (config) {
+    config.set({
 
-    basePath: '',
+        basePath: '',
 
-    frameworks: ['jasmine','chai', 'sinon-chai'],
+        frameworks: ['jasmine', 'chai', 'sinon-chai'],
 
-    files: [
-      'public/vendor/angular/angular.js',
-      'public/vendor/angular-resource/angular-resource.js',
-      'public/vendor/angular-mocks/angular-mocks.js',
-      'public/vendor/underscore/underscore.js',
-      'test/*.js',
-      'public/app/**/*.js',
-      'test/**/*.test.js'
-    ],
+        files: [
+            'public/vendor/angular/angular.js',
+            'public/vendor/angular-resource/angular-resource.js',
+            'public/vendor/angular-mocks/angular-mocks.js',
+            'public/vendor/underscore/underscore.js',
+            'test/*.js',
+            'public/app/**/*.js',
+            'test/**/*.test.js'
+        ],
 
-    exclude: [
-      'public/app/app.js'
-    ],
+        exclude: [
+            'public/app/app.js'
+        ],
 
-    preprocessors: {
-    },
+        preprocessors: {},
 
-    reporters: ['progress'],
+        reporters: ['progress'],
 
-    port: 9876,
+        port: 9876,
 
-    colors: true,
+        colors: true,
 
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_ERROR,
+        logLevel: config.LOG_ERROR,
 
-    autoWatch: true,
+        autoWatch: true,
 
-    browsers: ['PhantomJS'],
+        browsers: ['PhantomJS'],
 
-    singleRun: false,
+        singleRun: false,
 
-    plugins: ['karma-phantomjs-launcher','karma-jasmine','karma-chai-plugins']
-  });
+        plugins: ['karma-phantomjs-launcher', 'karma-jasmine', 'karma-chai-plugins']
+    });
 };

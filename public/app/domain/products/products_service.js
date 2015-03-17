@@ -1,4 +1,4 @@
-angular.module('app').factory('ProductService', ['$resource', function ($resource) {
+angular.module('app').factory('ProductsService', ['$resource', function ($resource) {
 
     var getProducts = function(){
         return $resource('/api/products').query();
@@ -6,6 +6,6 @@ angular.module('app').factory('ProductService', ['$resource', function ($resourc
 
     return {
         getProducts: getProducts
-    }
+    };
 
 }]);

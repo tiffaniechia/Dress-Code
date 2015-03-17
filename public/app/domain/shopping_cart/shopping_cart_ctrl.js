@@ -17,4 +17,14 @@ angular.module('app').controller('ShoppingCartCtrl',['$scope', '$rootScope', fun
         $rootScope.$broadcast('cart-modified');
     };
 
+    $rootScope.$on('cart-modified',function(){
+        updatePrice();
+    });
+
+    var updatePrice =  function(){
+        $scope.totalPrice = _.reduce($rootScope.cart, function(total,item){
+            return total + item.price;
+        },0);
+    };
+
 }]);

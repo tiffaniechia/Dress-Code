@@ -1,28 +1,23 @@
-describe("ProductCtrl", function () {
-    var ProductCtrl, scope, mockProductService, responseData, mockDeferredProducts, $q, $rootScope;
+describe("ProductsCtrl", function () {
+    var ProductsCtrl, scope, mockProductsService, responseData, mockDeferredProducts, $q, $rootScope;
 
     beforeEach(function () {
         module('app');
 
         inject(function ($controller, _$q_, _$rootScope_) {
-
             $rootScope = _$rootScope_;
-
             $q = _$q_;
             scope = $rootScope.$new();
-
-            mockProductService = {
+            mockProductsService = {
                 getProducts: function () {
                     mockDeferredProducts = $q.defer();
                     return {$promise: mockDeferredProducts.promise};
                 }
             };
 
-            spyOn(mockProductService, 'getProducts').and.callThrough();
-
-            $controller('ProductCtrl', {$scope: scope, ProductService: mockProductService});
+            spyOn(mockProductsService, 'getProducts').and.callThrough();
+            $controller('ProductsCtrl', {$scope: scope, ProductsService: mockProductsService});
         });
-
 
         responseData = [
             {id: '1', name: 'product a', category: 'a', price: 12, quantity: 34},
@@ -43,11 +38,6 @@ describe("ProductCtrl", function () {
         it("should load product list", function () {
             expect(scope.products).toEqual(responseData);
         });
-
-        it("should load product categories without duplicates", function () {
-            expect(scope.productCategories).toEqual(['a', 'b', 'c']);
-        });
     });
-
 
 });
