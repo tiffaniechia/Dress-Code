@@ -2,10 +2,10 @@ angular.module('app').controller('MainCtrl', ['$scope','$rootScope', function ($
 
    $rootScope.cart = $rootScope.cart ? $rootScope.cart : [];
 
-   $scope.page = 'shopping cart';
+   $scope.page = 'Shopping Cart';
 
    $scope.switchPage = function(){
-      $scope.page = ( $scope.page == 'shopping cart') ? 'products' : 'shopping cart';
+      $scope.page = ( $scope.page == 'Shopping Cart') ? 'Product List' : 'Shopping Cart';
    }
 
 }]);

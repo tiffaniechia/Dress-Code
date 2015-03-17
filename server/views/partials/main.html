@@ -1,0 +1,10 @@
+<div class="header">
+    <h1>DRESSCODE.</h1>
+    <button class="pageButton" ng-click="switchPage()">Go to {{page}}</button>
+</div>
+<div ng-hide="page=='Shopping Cart'">
+    <div ng-include="'partials/shopping_cart.html'" ng-controller="ShoppingCartCtrl"></div>
+</div>
+<div ng-hide="page=='Product List'">
+    <div ng-include="'partials/products.html'" ng-controller="ProductsCtrl" ng-init="init()"></div>
+</div>
