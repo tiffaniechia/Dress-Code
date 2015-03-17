@@ -30,15 +30,17 @@ I built the application with the SOLID principles in mind. Each domain was taugh
 
 ### 3. Application Design Decisions
 
-I took strict care in ensuring that the models, services, and controllers contained the appropriate type of logic -wherein controllers were views/business logic, services strictly fetched from APIs.
+I took strict care in ensuring that the models, services, and controllers contained the appropriate type of logic -wherein controllers were views/business logic, services strictly fetched from APIs. The biggest design decisions centered mainly around how to handle and/or create data.
 
-- APIs are implemented in a RESTFUL manner.
+#### Main data handling
+APIs are implemented in a RESTFUL manner.
 
-- A big concern was definitely database fetching, as that is both costly and time consuming. I tried to minimize calling the database as much as possible preferring to transform data with Angular than get/post to the database
+A big concern was definitely database fetching, as that is both costly and time consuming. I tried to minimize calling the database as much as possible preferring to transform data with Angular than get/post to the database
 
-- The current struggle given how data has been wired together meant that models were very thin and not used. As the controllers were able to parse the data given straight from the services. Given this, I created the models for 1. documentation of how the db works, and for future requirements of posting to the databases.
+The current struggle given how data has been wired together meant that models were very thin and not used. As the controllers were able to parse the data given straight from the services. Given this, I created the models for 1. documentation of how the db works, and for future requirements of posting to the databases.
 
-- One of the biggest design decisions was the handling of shopping cart data. I have taken the decision to pass shopping cart data around instead of on rootscope
+#### Shopping cart data
+ One of the biggest design decisions was the handling of shopping cart data. I have taken the decision to pass shopping cart data around instead of on rootscope
 a. post to a temporary database
 b. emiting/ broadcasting data
 c. passing through state params
@@ -46,23 +48,37 @@ d. writing it to a service
 
   While writing to the rootscope is often a bad idea, I took into consideration how this is an ecommerce site, and cart data would definitely be pertinent to every corner and possible extensions of the site.
 
-  I decided against putting it into a database because of the nature of an ecommerce site, users will continuously add and remove items from their shopping cart. This will happen multiple times in a short period of time. Getting and posting this data from the database would hence be inefficient, slow, and costly.
+  I decided against putting it into a database because of the nature of an ecommerce site, users will continuously add and remove items from their shopping cart. This will happen multiple times in a short period of time. Getting and posting this data from the database would hence be inefficient, slow, and costly. The final post will only be made during checkout to check for the products prior to payment.
 
   Writing it to the rootscope was definitely an easier implementation as opposed to passing state params. passing through state params would require the app to no longer be a single page.
 
   While writing data to a service is a good practice to share data, a service that purely sends cart data around was not a preferrable domain design.
 
-- Another major decision was to put the vouchers in a database. The reason for this was for extensibility reasons (writing/ changing/ updating said data would be more efficient on the database). And the responsibility of updating and maintaing such data should definitely be separated from the code base. Any change to voucher logic (given it follows basic paramters of having a discount and a requirement) would not affect the code base, and changes can be easily extended via the domain.
+#### Vouchers database
+Another major decision was to put the vouchers in a database. The reason for this was for extensibility reasons (writing/ changing/ updating said data would be more efficient on the database). And the responsibility of updating and maintaing such data should definitely be separated from the code base. Any change to voucher logic (given it follows basic paramters of having a discount and a requirement) would not affect the code base, and changes can be easily extended via the domain.
 
-- I have taken an active decision to not minify and uglify the js files on production as I wanted you to be able to inspect the code easily.
+#### Front end design
+The front end structure was created to mimic the domain design as close as possible.
 
-- The front end structure was created to mimic the domain design as close as possible.
+The concerns I have taken with front end was definitely to make it reponsive.
 
-  The concerns I have taken with front end was definitely to make it reponsive.
+Simple colour and text differences were used to call out to important information & associated colours (pink) with call to action
 
-  Simple colour and text differences were used to call out to important information & associated colours (pink) with call to action
+#### Build decisions
+I have taken an active decision to not minify and uglify the js files on production as I wanted you to be able to inspect the code easily.  
 
 ---
 ###   4. Acceptance Criteria Decisions
 
 I have implemented all of the acceptance criteria with a slight ammendment to #6. Instead of an alert, I want to exercise my duty as a consultant to advise on this. I have hence implemented a solution that results in the same end (users not able to add non eligible vouchers) but instead of showing it to them, i do not display the information in the first place. This would definitely improve user experience and smoothen the user journey.
+
+---
+### 5. How to run this application
+
+This application is available on heroku however if you wish to view this locally, make sure you have node, npm, bower, mongodb, karma installed.
+
+Before running the server, ensure mongod is running.
+
+```
+node server.js
+```
