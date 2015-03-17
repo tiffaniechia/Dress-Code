@@ -12,7 +12,7 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
         $scope.newPrice = $scope.totalPrice;
         $scope.vouchersApplied = [];
         $scope.eligibleVouchers = [];
-        getEligibleVouchers();
+        $scope.getEligibleVouchers();
     });
 
     $scope.isVoucherApplied = function(voucher){
@@ -38,7 +38,7 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
         });
     };
 
-    var getEligibleVouchers = function () {
+    $scope.getEligibleVouchers = function () {
         $scope.eligibleVouchers = _.reduce($scope.vouchersAvailable, function (result, voucher) {
             if (metSpendingRequirements(voucher)) {
                 if (voucher.categoryRequirements.length > 0) {
