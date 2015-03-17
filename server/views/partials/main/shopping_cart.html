@@ -1,13 +1,16 @@
 <div ng-controller="ShoppingCartCtrl">
 
-{{cart}}
     <div ng-repeat="item in cart track by $index" >
         <ul>
-            <li>{{item}}</li>
+            <li>
+               Product in Cart: {{item.name}}, £{{ item.price}}
+                <button ng-click="removeItem(item) && updatePrice()">Remove item</button>
+            </li>
         </ul>
     </div>
 
     <br/>
-   {{totalPrice}}
+
+    <p ng-controller="PriceCalculatorCtrl">Total Price: {{totalPrice}}</p>
 
 </div>

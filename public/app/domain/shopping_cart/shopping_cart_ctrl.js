@@ -1,11 +1,9 @@
 angular.module('app').controller('ShoppingCartCtrl',['$scope', '$rootScope', function($scope, $rootScope){
 
-    $scope.totalPrice = 0;
-
     $scope.addItem = function(product){
         $rootScope.cart.push(product);
         product.quantity = product.quantity - 1;
-        updateTotalPrice();
+        $rootScope.$broadcast('cart-modified');
     };
 
     $scope.isInCart = function(product){
@@ -16,15 +14,9 @@ angular.module('app').controller('ShoppingCartCtrl',['$scope', '$rootScope', fun
         var index =  $rootScope.cart.indexOf(product);
         $rootScope.cart.splice(index,1);
         product.quantity = product.quantity + 1;
-
-        updateTotalPrice();
+        $rootScope.$broadcast('cart-modified');
     };
 
-    var updateTotalPrice = function(){
-        $scope.totalPrice = _.reduce($scope.cart, function(total,item){
-            return total + item.price;
 
-        },0);
-    };
 
 }]);
