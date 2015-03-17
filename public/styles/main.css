@@ -38,7 +38,6 @@ body{
     height:32%;
     padding: 0.6em;
     font-size: 1.5em;
-    /*font-weight: bold;*/
 }
 
 .itemPrice {
@@ -80,6 +79,10 @@ button{
     font-size: 1.2em;
 }
 
+.wrapper {
+    margin-top: 3em;
+}
+
 .cart {
     border: 0.4em solid black;
     border-radius: 0.4em;
@@ -112,4 +115,32 @@ button{
 
 .cartItemButton {
     float:right;
+}
+
+.vouchers {
+    margin:2em;
+    background-color:white;
+}
+
+.vouchersMessage {
+    border: 0.4em solid #E2035;
+    border-radius: 0.4em 0.4em 0 0 ;
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    padding: 2.5em ;
+    background-color:#E20359;
+    color: white;
+
+}
+
+.voucherList {
+    background-color:white;
+
+}
+
+.voucherItem {
+    padding:1em;
+    height:2.3em;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid black;
 }

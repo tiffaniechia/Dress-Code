@@ -1,0 +1,15 @@
+<div class="vouchers">
+    <div>
+        <p class="vouchersMessage" ng-if="eligibleVouchers.length > 0">
+            Look! Lucky you, you're eligible for discounts! Check the boxes to apply them!
+        </p>
+    </div>
+
+    <div class="voucherList"ng-repeat="voucher in eligibleVouchers">
+        <div class="voucherItem">
+             <input type="checkbox" ng-click="updateWD(voucher)"> Voucher: {{voucher.description}}
+        </div>
+    </div>
+    {{vouchersChosen}}
+    {{priceWithDiscount}}
+</div>

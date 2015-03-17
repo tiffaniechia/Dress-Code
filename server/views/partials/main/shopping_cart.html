@@ -1,6 +1,7 @@
-<div ng-controller="ShoppingCartCtrl">
+<div class="wrapper" ng-controller="ShoppingCartCtrl">
     <div class="cart">
         <div class="cartHeader">SHOPPING CART</div>
+        <div class="cartItem" ng-if="cart.length == 0">Shopping cart is empty, go shopping!</div>
         <div ng-repeat="item in cart track by $index">
             <div class="cartItem">
                 Product in Cart: {{item.name}}, {{ item.price |currency:"GBP£"}}
@@ -11,6 +12,6 @@
     </div>
 
 
-    <div ng-include="'partials/main/vouchers.html'" ng-controller="VouchersCtrl" ng-init="init()"></div>
+    <div class="wrapper" ng-include="'partials/main/vouchers.html'" ng-controller="VouchersCtrl" ng-init="init()"></div>
 
 </div>
