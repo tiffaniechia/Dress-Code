@@ -4,8 +4,7 @@
   "description": "Apparel Ecommerce Site For Deloitte",
   "main": "app.js",
   "scripts": {
-    "test": "karma start",
-    "postinstall": "bower install"
+    "test": "karma start"
   },
   "engines": {
     "node": "0.10.33",
