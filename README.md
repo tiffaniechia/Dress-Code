@@ -52,6 +52,8 @@ d. writing it to a service
 
   While writing data to a service is a good practice to share data, a service that purely sends cart data around was not a preferrable domain design.
 
+- Another major decision was to put the vouchers in a database. The reason for this was for extensibility reasons (writing/ changing/ updating said data would be more efficient on the database). And the responsibility of updating and maintaing such data should definitely be separated from the code base. Any change to voucher logic (given it follows basic paramters of having a discount and a requirement) would not affect the code base, and changes can be easily extended via the domain.
+
 - I have taken an active decision to not minify and uglify the js files on production as I wanted you to be able to inspect the code easily.
 
 - The front end structure was created to mimic the domain design as close as possible.
@@ -62,3 +64,5 @@ d. writing it to a service
 
 ---
 ###   4. Acceptance Criteria Decisions
+
+I have implemented all of the acceptance criteria with a slight ammendment to #6. Instead of an alert, I want to exercise my duty as a consultant to advise on this. I have hence implemented a solution that results in the same end (users not able to add non eligible vouchers) but instead of showing it to them, i do not display the information in the first place. This would definitely improve user experience and smoothen the user journey.
