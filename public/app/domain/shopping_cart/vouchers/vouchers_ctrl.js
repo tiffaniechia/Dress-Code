@@ -9,9 +9,10 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
     };
 
     $rootScope.$on('cart-modified', function(){
-        updateEligibleVouchers();
         $scope.newPrice = $scope.totalPrice;
         $scope.vouchersApplied = [];
+        $scope.eligibleVouchers = [];
+        getEligibleVouchers();
     });
 
     $scope.isVoucherApplied = function(voucher){
@@ -27,13 +28,8 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
         $scope.newPrice = $scope.newPrice - voucher.discount;
     };
 
-    var updateEligibleVouchers = function () {
-        $scope.eligibleVouchers = [];
-        $scope.getEligibleVouchers();
-    };
-
     var metSpendingRequirements = function (voucher) {
-        return $scope.totalPrice >= voucher.spendingRequirements;
+        return $scope.totalPrice > voucher.spendingRequirements;
     };
 
     var metCategoryRequirements = function (voucher) {
@@ -42,11 +38,10 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
         });
     };
 
-    $scope.getEligibleVouchers = function () {
+    var getEligibleVouchers = function () {
         $scope.eligibleVouchers = _.reduce($scope.vouchersAvailable, function (result, voucher) {
             if (metSpendingRequirements(voucher)) {
                 if (voucher.categoryRequirements.length > 0) {
-                   // console.log('here');
                     if (metCategoryRequirements(voucher)) {
                         result.push(voucher);
                         return result;
@@ -54,6 +49,8 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
                     return result;
                 }
                 result.push(voucher);
+                console.log($rootScope.cart);
+                console.log();
                 return result;
             }
             return result;

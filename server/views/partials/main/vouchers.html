@@ -15,8 +15,8 @@
         </div>
     </div>
     <div>
-        <p class="vouchersTotal">
-            New total price When you apply your discounts: {{newPrice |currency:"GBP£"}}
+        <p class="vouchersTotal" ng-if="eligibleVouchers.length > 0">
+            New total price when you apply your discounts: {{newPrice |currency:"GBP£"}}
         </p>
     </div>
 </div>
