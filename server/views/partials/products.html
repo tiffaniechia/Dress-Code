@@ -1,16 +1,22 @@
 <div class="wrapper">
     <div class="itemsBlock">
         <div class="item" ng-repeat="product in products">
-            <div class="itemTitle">{{ product.name }}</div>
-
-            <div class="itemPrice">{{ product.price |currency:"GBP£"}}</div>
-            <div class="itemDetails">
-                <div>{{ product.category }}</div>
-                <div>Quantity: {{ product.quantity }}</div>
+            <div class="itemPictureContainer">
+                <img class="placeHolderImage" src="../../assets/shirt.jpeg">
             </div>
-            <div class="itemButtons" ng-controller="ShoppingCartCtrl">
-                <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
-                <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
+            <div class="itemDetailsContainer">
+                <div class="itemTitle">{{ product.name }}</div>
+                <div class="itemPrice">{{ product.price |currency:"GBP£"}}</div>
+                <div class="itemDetails">
+                    <div>{{ product.category }}</div>
+                    <div>Quantity In Stock: {{ product.quantity }}</div>
+                </div>
+            </div>
+            <div class="itemButtonsContainer">
+                <div class="itemButtons" ng-controller="ShoppingCartCtrl">
+                    <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
+                    <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
+                </div>
             </div>
         </div>
     </div>

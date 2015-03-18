@@ -1,82 +1,71 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: #FFF82A;
+    background-color: white;
 }
 
-.header {
-    background-color: black;
-    padding: 1em;
-    color: #FFF82A
-}
-
-.footer {
-    background-color: rgb(0, 159, 77);
-}
-
-.itemsBlock {
-    display: inline-block;
-    width: 100%;
+.bodyWrapper {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.item {
-    border: 0.4em solid;
-    border-radius: 0.4em;
-    width: 15em;
-    height: 21em;
-    float: left;
-    text-align: center;
-    margin: 0.5em;
+.header {
+    background-color: white;
+    border-bottom: 1.5px solid black;
 }
 
-.itemTitle {
-    font-family: 'Pacifico', cursive;
-    color: white;
-    background: black;
-    height: 32%;
-    padding: 0.6em;
-    font-size: 1.5em;
-}
-
-.itemPrice {
-    color: #E20359;
-    background: #292b2e;
-    height: 10%;
-    font-size: 1.3em;
-    font-weight: bold;
-    padding: 1em 0 0.5em 0;
-}
-
-.itemDetails {
-    color: white;
-    background: black;
-    font-size: 0.8em;
-    font-weight: lighter;
-    padding: 1em 0 0.5em 0;
-    height: 10%
-}
-
-.itemButtons {
-    background: black;
-    height: 20%;
-    padding: 1em 0 0 0;
-}
-
-button {
-    padding: 0.8em;
-    background-color: #E20359;
-    color: white;
-    border: 0.4em solid #E20359;
-    border-radius: 0.4em;
+.header h1 {
+    color: black;
+    font-size: 2em;
+    font-weight: 100;
+    display: inline-block;
+    margin-left: 1em;
 }
 
 .pageButton {
     float: right;
-    margin-top: -0.8em;
-    margin-right: -1em;
+    background-color:rgb(182,224,38);
+    padding-top: 2.2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    margin-right: 5.2em;
+    width: 15em;
+}
+
+.pageButton:hover {
+    border-bottom: none;
+    color: white;
+    background-color: rgb(41,154,11);
+}
+
+.pageButton h2 {
     font-size: 1.2em;
+    font-weight: 100;
+    color: white;
+}
+
+button {
+    padding: 0.8em;
+    background-color: white;
+    border: 0.1em solid  white;
+    font-weight: 100;
+    color: rgb(182,224,38);
+    font-size: 0.6em;
+}
+
+button:disabled {
+    color: #808080;
+}
+
+button:disabled:hover {
+    color:  #808080;
+    border-bottom: none;
+}
+
+button:hover {
+    color: rgb(41,154,11);
+    border-bottom: 0.3em solid  rgb(41,154,11);
 }
 
 .wrapper {
