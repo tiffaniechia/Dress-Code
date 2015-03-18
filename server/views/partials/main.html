@@ -6,9 +6,9 @@
 </div>
 <div class="bodyWrapper">
     <div ng-hide="page=='Shopping Cart'">
-        <div ng-include="'partials/shopping_cart.html'"></div>
+        <div ng-include="'partials/shopping_cart.html'" ng-controller="ShoppingCartCtrl"></div>
     </div>
     <div ng-hide="page=='Product List'">
-        <div ng-include="'partials/products.html'"></div>
+        <div ng-include="'partials/products.html'" ng-controller="ProductsCtrl" ng-init="init()"></div>
     </div>
 </div>
