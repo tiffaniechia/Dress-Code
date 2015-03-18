@@ -13,7 +13,7 @@ http://dress-code-deloitte-digital.herokuapp.com/
  I have chosen a MEAN stack to build this application. While I have not used 3/4 of the technology stack, I believe in using the right tools for the job. My main concerns when I was choosing the tech stack were of extensibility (I wanted technologies that made scaling up a lot easier), accessibility (how easy it is for other developers to step in and build it up), and efficiency (ramping up on given stack should be fast given current knowledge resources).
 
  #### a. Angular JS (Client side)
- The decision for this stack was guided by Angular. Given that Angular provides powerful two way bindings, it makes this Angular great choicec for applications with a lot of user interactions. The verbose nature of the framework would also allow client side development to be a lot faster, which is a huge consideration for this given task.
+ The decision for this stack was guided by Angular. Given that Angular provides powerful two way bindings, it makes Angular a great choice for applications with a lot of user interactions. The verbose nature of the framework would also allow client side development to be a lot faster, which is a huge consideration for this given task.
 
  #### b. Node.js + Express.js (Server side)
  Knowing that my client side was going to be written in Javascript, I sought to find a similar language for the server side as well. The reason behind this was because I wanted handovers, onboarding, and extension of this code base to be a lot swifter - a developer with knowledge in Javascript can write both front and back end code, as opposed to having to find a developer proficient in two different languages if client and server sides were written in different languages. This would make ramping up and hiring a lot easier.
@@ -23,7 +23,7 @@ http://dress-code-deloitte-digital.herokuapp.com/
  #### c. MongoDB
  After researching on other databases, MongoDB stood out because of its schemaless approach. This meant scalability and better performance if the database needs to be improved upon which would definitely be a task in the foreseeable future as the app is at its infancy stages and things are just starting to take shape.
 
-Having had to extend a relational database taught me that schemaless databases were definitely less costly in both time, effort, and resources to maintain for both the short run and the long run.
+Having had to extend a relational database taught me that schemaless databases were definitely very costly in both time, effort, and resources to maintain for both the short run and long run.
 
 ---
 ### 2.  Domain Design Descisions
@@ -41,7 +41,7 @@ APIs are implemented in a RESTFUL manner.
 
 A big concern was definitely in database fetching, as that is both costly and time consuming. I tried to minimize database calling as much as possible, preferring to transform data with Angular.
 
-The current struggle given how data has been wired together meant that models were very thin and were not used as the controllers were able to parse the key data given delivered from the services. Given this, I created the models for 1. documentation of how the db works, and 2. for future requirements of posting to the databases.
+The current struggle given how data has been wired together meant that models were very thin and were not used as the controllers were able to parse the key data delivered the services (API). Given this, I created the models for 1. documentation of how the db works, and 2. for future requirements of posting to the databases.
 
 #### Shopping cart data
  One of the biggest design decisions was the handling of shopping cart data. I have taken the decision to pass shopping cart data around the rootscope instead of
@@ -52,13 +52,13 @@ d. writing it to a service
 
   While writing to the rootscope is often frowned upon, I took into consideration how this is an ecommerce site, and cart data would definitely be pertinent to every corner and possible extensions of the site.
 
-  I decided against putting shopping cart data into a database because of the nature of an ecommerce site- users will continuously add and remove items from their shopping cart. This will happen multiple times in a short period of time. Getting and posting this data from the database in such a frequent manner would be inefficient, slow, and costly. Also, this should not affect the base quantity of a product. Understandably if two users added the same product, there would be a conflict in check out because of the data change isn't available in the database. The idea is that a final post request will be made during checkout to check for the products availability prior to payment.
+  I decided against putting shopping cart data into a database because of the nature of an ecommerce site- users will continuously add and remove items from their shopping cart. This will happen multiple times in a short period of time. Getting and posting this data from the database in such a frequent manner would be inefficient, slow, and costly. Also, this should not affect the base quantity of a product. Understandably if two users added the same product, there would be a conflict in check out because the data change isn't available in the database. The idea is that a final post request will be made during checkout to check for the products availability prior to payment.
 
-  Writing shopping cart data to the rootscope was definitely an easier implementation as opposed to passing it as a state param. passing through state params would mean the application is no longer a single page application.
+  Writing shopping cart data to the rootscope was definitely an easier implementation as opposed to passing it as a state param. Passing through state params would mean the application would have to be restructured to be no longer a single page application.
 
   While writing data to a service is a good practice to share common data across controllers, a service that purely sends shopping cart data around was not a preferable domain design given the current scope of the assignment.
 
-  That being said, when the scope increases, putting the cart information on the service would allow for extensibility of this information - for example storage of that information in the cookies, which would be a good design decision.
+  That being said, when the scope increases, I will definitely look towards putting the cart information into a service as it would allow for cleaner extensibility of this information - for example storage of cart information in the cookies would be an available option in this new design.
 
 #### Vouchers database
 Another major decision was to put the vouchers information in a database. The reason for this was for extensibility (writing/ changing/ updating said data would be more efficient on the database). And the responsibility of updating and maintaing such data should definitely be separated from the code base. Any change to voucher logic (given it follows basic parameters of having a discount and requirements) would not affect the code base, and changes can be easily extended via the domain.
