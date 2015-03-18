@@ -23,7 +23,7 @@ http://dress-code-deloitte-digital.herokuapp.com/
  #### c. MongoDB
  After researching on other databases, MongoDB stood out because of its schemaless approach. This meant scalability and better performance if the database needs to be improved upon which would definitely be a task in the foreseeable future as the app is at its infancy stages and things are just starting to take shape.
 
-Having had to extend a relational database taught me that schemaless databases were definitely very costly in both time, effort, and resources to maintain for both the short run and long run.
+Having had to extend a relational database taught me that schema databases were definitely very costly in both time, effort, and resources to maintain for both the short run and long run, hence the appeal of a schemaless database.
 
 ---
 ### 2.  Domain Design Decisions
