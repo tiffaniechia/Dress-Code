@@ -1,0 +1,8 @@
+<div class="quickCartClose" ng-click="toggleQuickCart()">x</div>
+<div class="quickCartHeader">Quick Shopping Cart Overview</div>
+<div class="quickCartWrapper">
+    <div class="quickCartItem" ng-if="cart.length == 0">Shopping cart is empty</div>
+    <div class="quickCartItem" ng-repeat="item in cart track by $index">
+        Product in Cart: {{item.name}}, {{ item.price |currency:"GBP£"}}
+    </div>
+</div>

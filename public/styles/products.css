@@ -4,10 +4,10 @@
 
 .item {
     width: 16em;
-    height: 22em;
+    height: 24em;
     float: left;
     text-align: center;
-    margin: 0.5em;
+    margin: 0.6em;
 }
 
 .itemPictureContainer {
@@ -21,11 +21,11 @@
 }
 
 .itemButtonsContainer {
-    height:20%;
+    height:25%;
 }
 
 .itemTitle {
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: bolder;
 }
 

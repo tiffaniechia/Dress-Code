@@ -5,6 +5,11 @@
     </button>
 </div>
 <div class="bodyWrapper">
+    <div ng-hide="!quickCartView">
+        <div class="overlay"></div>
+        <div class="modal" ng-include="'partials/quick_cart_view.html'"></div>
+    </div>
+
     <div ng-hide="page=='Shopping Cart'">
         <div ng-include="'partials/shopping_cart.html'" ng-controller="ShoppingCartCtrl"></div>
     </div>

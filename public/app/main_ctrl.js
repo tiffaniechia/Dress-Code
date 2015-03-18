@@ -6,6 +6,11 @@ angular.module('app').controller('MainCtrl', ['$scope','$rootScope', function ($
 
    $scope.switchPage = function(){
       $scope.page = ( $scope.page == 'Shopping Cart') ? 'Product List' : 'Shopping Cart';
-   }
+   };
 
+   $scope.quickCartView = false;
+
+   $scope.toggleQuickCart = function() {
+      $scope.quickCartView = !$scope.quickCartView;
+   }
 }]);

@@ -1,0 +1,58 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.modal {
+    width: 50%;
+    height: 40%;
+    position: fixed;
+    top: 40%;
+    left: 25%;
+    margin-top: -100px;
+    background-color: rgb(247,247,247);
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11;
+}
+
+.quickCartOpen {
+    font-size: 0.5em;
+    font-weight: bolder;
+    padding:0.3em;
+    color: white;
+    background-color: rgb(182,224,38);
+
+}
+
+.quickCartClose {
+    border-radius: 22em;
+    border: 0.4em solid rgb(182,224,38);
+    background-color: rgb(182,224,38);
+    color: white;
+    width:1.4em;
+    float: right;
+    font-weight: bolder;
+    z-index: 11;
+}
+
+.quickCartWrapper {
+    padding:2em;
+    overflow: scroll;
+    height: inherit;
+}
+
+.quickCartItem {
+    font-size: 0.7em;
+    padding: 1em;
+}
+.quickCartHeader {
+    padding:1em;
+    font-size: 1em;
+    border-bottom: 0.2em solid rgb(182,224,38) ;
+}

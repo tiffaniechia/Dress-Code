@@ -17,6 +17,7 @@
                     <button ng-disabled="product.quantity == 0" ng-click="addItem(product)">Add to cart</button>
                     <button ng-if="isInCart(product)" ng-click="removeItem(product)">Remove from cart</button>
                 </div>
+                <div class="quickCartOpen" ng-click="toggleQuickCart()">Quick Shopping Cart View</div>
             </div>
         </div>
     </div>
