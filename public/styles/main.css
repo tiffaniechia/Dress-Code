@@ -48,7 +48,7 @@ body {
 
 button {
     padding: 0.8em;
-    background-color: white;
+    background-color: transparent;
     border: 0.1em solid  white;
     color: rgb(182,224,38);
     font-size: 0.6em;
