@@ -49,8 +49,6 @@ angular.module('app').controller('VouchersCtrl', ['$scope', '$rootScope', 'Vouch
                     return result;
                 }
                 result.push(voucher);
-                console.log($rootScope.cart);
-                console.log();
                 return result;
             }
             return result;

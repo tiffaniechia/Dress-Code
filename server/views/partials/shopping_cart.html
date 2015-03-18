@@ -8,7 +8,7 @@
                 <button class="cartItemButton" ng-click="removeItem(item) && updatePrice()">Remove item</button>
             </div>
         </div>
-        <div class="cartFooter"> <h3> Total Price: {{totalPrice |currency:"GBP£"}} </h3></div>
+        <div class="cartFooter"><h3> Total Price: {{totalPrice |currency:"GBP£"}} </h3></div>
     </div>
-    <div class="wrapper" ng-include="'partials/vouchers.html'" ng-controller="VouchersCtrl" ng-init="init()"></div>
+    <div class="wrapper" ng-include="'partials/vouchers.html'"></div>
 </div>
