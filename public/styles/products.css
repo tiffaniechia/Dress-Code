@@ -1,3 +1,7 @@
+.placeHolderImage {
+
+}
+
 .itemsBlock {
     display: inline-block;
 }
@@ -8,11 +12,13 @@
     float: left;
     text-align: center;
     margin: 0.5em;
+
 }
 
 .itemPictureContainer {
     height:20%
     background-size:cover;
+
 }
 
 .itemDetailsContainer{
@@ -25,15 +31,22 @@
 }
 
 .itemTitle {
-    font-size: 0.6em;
+    font-size: 0.7em;
     font-weight: bolder;
 }
 
 .itemPrice {
     font-size: 0.6em;
+
 }
 
 .itemDetails {
     font-size: 0.6em;
     font-weight: lighter;
+}
+
+.itemButtons {
+
+
+
 }

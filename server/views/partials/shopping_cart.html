@@ -1,6 +1,6 @@
 <div class="wrapper" ng-controller="ShoppingCartCtrl">
     <div class="cart">
-        <div class="cartHeader">SHOPPING CART</div>
+        <div class="cartHeader"><h2>SHOPPING CART</h2></div>
         <div class="cartItem" ng-if="cart.length == 0">Shopping cart is empty, go shopping!</div>
         <div ng-repeat="item in cart track by $index">
             <div class="cartItem">
@@ -8,7 +8,7 @@
                 <button class="cartItemButton" ng-click="removeItem(item) && updatePrice()">Remove item</button>
             </div>
         </div>
-        <div class="cartFooter"> Total Price: {{totalPrice |currency:"GBP£"}}</div>
+        <div class="cartFooter"> <h3> Total Price: {{totalPrice |currency:"GBP£"}} </h3></div>
     </div>
     <div class="wrapper" ng-include="'partials/vouchers.html'" ng-controller="VouchersCtrl" ng-init="init()"></div>
 </div>

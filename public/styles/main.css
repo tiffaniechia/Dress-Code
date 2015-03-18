@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: white;
+    font-weight: 100;
 }
 
 .bodyWrapper {
@@ -18,14 +19,14 @@ body {
 .header h1 {
     color: black;
     font-size: 2em;
-    font-weight: 100;
     display: inline-block;
     margin-left: 1em;
+    font-weight: 100;
 }
 
 .pageButton {
     float: right;
-    background-color:rgb(182,224,38);
+    background-color: rgb(182,224,38);
     padding-top: 2.2em;
     padding-left: 0.8em;
     padding-right: 0.8em;
@@ -41,15 +42,14 @@ body {
 
 .pageButton h2 {
     font-size: 1.2em;
-    font-weight: 100;
     color: white;
+    font-weight: 100;
 }
 
 button {
     padding: 0.8em;
     background-color: white;
     border: 0.1em solid  white;
-    font-weight: 100;
     color: rgb(182,224,38);
     font-size: 0.6em;
 }
@@ -70,40 +70,6 @@ button:hover {
 
 .wrapper {
     margin-top: 3em;
-}
-
-.cart {
-    border: 0.4em solid black;
-    border-radius: 0.4em;
-    margin: 2em;
-    color: white;
-    background: black;
-}
-
-.cartHeader {
-    height: 2.3em;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding: 1em;
-}
-
-.cartFooter {
-    height: 2em;
-    padding: 1em;
-    font-weight: lighter;
-    background: black
-}
-
-.cartItem {
-    background: #292b2e;
-    color: white;
-    padding: 1em;
-    height: 2.3em;
-}
-
-.cartItemButton {
-    float: right;
 }
 
 .vouchers {
