@@ -26,7 +26,7 @@ http://dress-code-deloitte-digital.herokuapp.com/
 Having had to extend a relational database taught me that schemaless databases were definitely very costly in both time, effort, and resources to maintain for both the short run and long run.
 
 ---
-### 2.  Domain Design Descisions
+### 2.  Domain Design Decisions
 
 I built the application with the SOLID principles in mind. Each domain was thought out to reflect single responsibility, and as much abstraction was made as long as it made sense both business wise and development wise. Each domain could be easily extended upon or removed if need be. I took upmost care in making sure that appropriate encapsulation was in place.
 
