@@ -1,7 +1,13 @@
 angular.module('app').factory('ProductsService', ['$resource', function ($resource) {
+    var products;
 
     var getProducts = function(){
-        return $resource('/api/products').query();
+        if(products){
+            return products;
+        } else {
+            products = $resource('/api/products').query();
+            return products;
+        }
     };
 
     return {
