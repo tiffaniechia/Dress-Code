@@ -1,7 +1,13 @@
 angular.module('app').factory('VouchersService', ['$resource', function ($resource) {
+    var vouchers;
 
     var getVouchers = function () {
-        return $resource('/api/vouchers').query();
+        if(vouchers) {
+            return vouchers;
+        } else {
+            vouchers = $resource('/api/vouchers').query();
+            return vouchers
+        }
     };
 
     return {
