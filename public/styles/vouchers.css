@@ -10,7 +10,6 @@
     font-weight: 100;
     margin-bottom: 2.5em;
     padding-top: 2em;
-
 }
 
 .voucherItem {
@@ -20,13 +19,11 @@
 .voucherItemButton {
     float: right;
     background-color: transparent;
-
 }
 
 .voucherNotification {
     float: right;
     font-size: 0.8em;
-
 }
 
 .vouchersTotal {
