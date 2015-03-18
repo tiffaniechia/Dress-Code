@@ -17,6 +17,7 @@
 .cartFooter {
     height: 2em;
     padding: 1em;
+    border-top: 0.2em solid rgb(182,224,38);
 }
 
 .cartFooter h3 {

@@ -1,0 +1,42 @@
+.vouchers {
+    margin: 2em;
+    background-color: rgb(247,247,247);
+}
+
+.vouchersMessage {
+    font-size: 1.2em;
+    font-weight: 100;
+    margin-bottom: 2.5em;
+    padding-left:2em;
+    padding-right:2em;
+    padding-top:2em;
+}
+
+.voucherItem {
+    height: 3em;
+    padding-left:2em;
+    padding-right:2em;
+}
+
+.voucherItemButton {
+    float: right;
+    background-color: transparent;
+    padding-left:2em;
+    padding-right:2em;
+}
+
+.voucherNotification {
+    float: right;
+    font-size: 0.8em;
+    padding-left:2em;
+    padding-right:2em;
+}
+
+.vouchersTotal {
+    font-size: 1em;
+    font-weight: bolder;
+    margin-top: 1em;
+    padding-left:2em;
+    padding-right:2em;
+    padding-bottom:2em;
+}

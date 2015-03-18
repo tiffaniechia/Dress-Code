@@ -52,11 +52,13 @@ d. writing it to a service
 
   While writing to the rootscope is often frowned upon, I took into consideration how this is an ecommerce site, and cart data would definitely be pertinent to every corner and possible extensions of the site.
 
-  I decided against putting shopping cart data into a database because of the nature of an ecommerce site- users will continuously add and remove items from their shopping cart. This will happen multiple times in a short period of time. Getting and posting this data from the database in such a frequent manner would be inefficient, slow, and costly. Also, this should not affect the base quantity of a product. The idea is that a final post request will be made during checkout to check for the products availability prior to payment.
+  I decided against putting shopping cart data into a database because of the nature of an ecommerce site- users will continuously add and remove items from their shopping cart. This will happen multiple times in a short period of time. Getting and posting this data from the database in such a frequent manner would be inefficient, slow, and costly. Also, this should not affect the base quantity of a product. Understandably if two users added the same product, there would be a conflict in check out because of the data change isn't available in the database. The idea is that a final post request will be made during checkout to check for the products availability prior to payment.
 
   Writing shopping cart data to the rootscope was definitely an easier implementation as opposed to passing it as a state param. passing through state params would mean the application is no longer a single page application.
 
-  While writing data to a service is a good practice to share common data across controllers, a service that purely sends shopping cart data around was not a preferable domain design.
+  While writing data to a service is a good practice to share common data across controllers, a service that purely sends shopping cart data around was not a preferable domain design given the current scope of the assignment.
+
+  That being said, when the scope increases, putting the cart information on the service would allow for extensibility of this information - for example storage of that information in the cookies, which would be a good design decision.
 
 #### Vouchers database
 Another major decision was to put the vouchers information in a database. The reason for this was for extensibility (writing/ changing/ updating said data would be more efficient on the database). And the responsibility of updating and maintaing such data should definitely be separated from the code base. Any change to voucher logic (given it follows basic parameters of having a discount and requirements) would not affect the code base, and changes can be easily extended via the domain.
@@ -66,7 +68,7 @@ The front end structure was created to mimic the domain design as close as possi
 
 Good care was taken to make it responsive.
 
-Simple color and text differences were used to call out to important information and a key color (pink) was associated to call to action.
+Simple color differences were used to call out to important information (key colour green is associated to call to action).
 
 #### Build decisions
 I have taken an active decision to not minify and uglify the js files on production for easier inspection on heroku.  

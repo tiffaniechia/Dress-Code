@@ -1,8 +1,8 @@
 <div class="vouchers">
     <div>
-        <p class="vouchersMessage" ng-if="eligibleVouchers.length > 0">
-            Look! Lucky you, you're eligible for discounts!
-        </p>
+        <h2 class="vouchersMessage" ng-if="eligibleVouchers.length > 0">
+            Look! You're eligible for discounts!
+        </h2>
     </div>
     <div class="voucherList" ng-repeat="voucher in eligibleVouchers">
         <div class="voucherItem">
@@ -14,9 +14,9 @@
         </div>
     </div>
     <div>
-        <p class="vouchersTotal" ng-if="eligibleVouchers.length > 0">
+        <h3 class="vouchersTotal" ng-if="eligibleVouchers.length > 0">
             New total price when you apply your discounts: {{newPrice |currency:"GBP£"}}
-        </p>
+        </h3>
     </div>
 </div>
 
