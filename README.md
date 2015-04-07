@@ -88,6 +88,8 @@ If you wish to view this locally, make sure you have node, npm, bower, mongodb, 
 Before running the server, ensure mongod is running & install all bower and npm dependencies.
 
 ```
+npm install
+bower install
 node server.js
 ```
 
