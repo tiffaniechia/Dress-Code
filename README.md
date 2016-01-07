@@ -1,4 +1,4 @@
-##Tiffanie Chia for Deloitte Digital (London)
+##Tech test
 http://dress-code-deloitte-digital.herokuapp.com/
 
 ##Contents
@@ -7,20 +7,20 @@ http://dress-code-deloitte-digital.herokuapp.com/
 3. Application Design Decisions
 4. Acceptance Criteria Decisions
 5. How to run this application
-6. Deloitte Digital Tech Test (For Reference)
+6. Tech Test
 ---
-### 1. Architecture Design
+###1. Architecture Design
  I have chosen a MEAN stack to build this application. While I have not used 3/4 of the technology stack, I believe in using the right tools for the job. My main concerns when I was choosing the tech stack were of extensibility (I wanted technologies that made scaling up a lot easier), accessibility (how easy it is for other developers to step in and build it up), and efficiency (ramping up on given stack should be fast given current knowledge resources).
 
- #### a. Angular JS (Client side)
+ ####a. Angular JS (Client side)
  The decision for this stack was guided by Angular. Given that Angular provides powerful two way bindings, it makes Angular a great choice for applications with a lot of user interactions. The verbose nature of the framework would also allow client side development to be a lot faster, which is a huge consideration for this given task.
 
- #### b. Node.js + Express.js (Server side)
+ ####b. Node.js + Express.js (Server side)
  Knowing that my client side was going to be written in Javascript, I sought to find a similar language for the server side as well. The reason behind this was because I wanted handovers, onboarding, and extension of this code base to be a lot swifter - a developer with knowledge in Javascript can write both front and back end code, as opposed to having to find a developer proficient in two different languages if client and server sides were written in different languages. This would make ramping up and hiring a lot easier.
 
  The reason why I chose Express.js as opposed to other frameworks was because of its of how rudimentary it was, a basic knowledge of node is all that is required to ramp up and start building the server side code.
 
- #### c. MongoDB
+ ####c. MongoDB
  After researching on other databases, MongoDB stood out because of its schemaless approach. This meant scalability and better performance if the database needs to be improved upon which would definitely be a task in the foreseeable future as the app is at its infancy stages and things are just starting to take shape.
 
 Having had to extend a relational database taught me that schema databases were definitely very costly in both time, effort, and resources to maintain for both the short run and long run, hence the appeal of a schemaless database.
@@ -101,7 +101,7 @@ karma start
 
 ----
 
-###Deloitte Digital Development Test
+###Tech Test instructions
 You’ve been asked to develop a responsive website for a clothing retailer.
 The retailer sells six different categories of clothes: women’s footwear, men’s footwear, women’s casualwear, men’s casualwear, women’s formalwear and man’s formalwear.
 The page that you develop should display all of the available products, as well as a shopping cart to which they can be added.
